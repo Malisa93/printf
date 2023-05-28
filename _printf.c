@@ -9,7 +9,7 @@ void _buffer(char buffer[], int *buff_int);
  */
 int _printf(const char *format, ...)
 {
-	int k, p_char = 0, str = 0;
+	int i, p_char = 0, str = 0;
 	int flags, width, precision, size, buff_int = 0;
 	va_list li;
 	char buffer[BUFF_SIZE];
@@ -19,11 +19,11 @@ int _printf(const char *format, ...)
 
 	va_start(li, format);
 
-	for (k = 0; format && format[k] != '\0'; k++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		if (format[k] != '%')
+		if (format[i] != '%')
 		{
-			buffer[buff_int++] = format[k];
+			buffer[buff_int++] = format[i];
 			if (buff_int == BUFF_SIZE)
 				_buffer(buffer, &buff_int);
 			p_char++;
@@ -31,12 +31,12 @@ int _printf(const char *format, ...)
 		else
 		{
 			_buffer(buffer, &buff_int);
-			flags = _flags(format, &k);
-			width = _width(format, &k, li);
-			precision = _precision(format, &k, li);
-			size = _size(format, &k);
-			++k;
-			str = _handle(format, &k, li, buffer,
+			flags = _flags(format, &i);
+			width = _width(format, &i, li);
+			precision = _precision(format, &i, li);
+			size = _size(format, &i);
+			++i;
+			str = _handle(format, &i, li, buffer,
 				flags, width, precision, size);
 			if (str == -1)
 				return (-1);
