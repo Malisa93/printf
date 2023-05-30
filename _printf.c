@@ -1,13 +1,22 @@
 #include "main.h"
 
+void _buffer(char buffer[], int *buff_int);
+
 /**
  * _printf-print as the printf lib
+ *
  * @format:first string
- * Return:arguments.
+ *
+ * Return:arguments
+ *
  */
+
 int _printf(const char *format, ...)
 {
 	int i, p_char = 0, str = 0;
+	int flags, width, precision, size, buff_int = 0;
+	va_list li;
+	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
@@ -44,4 +53,21 @@ int _printf(const char *format, ...)
 	va_end(li);
 
 	return (p_char);
+}
+
+/**
+ * _buffer-Prints the char in a buffer
+ *
+ * @buffer:array of char
+ *
+ * @buff_int:len of a buffer
+ *
+ */
+
+void _buffer(char buffer[], int *buff_int)
+{
+	if (*buff_int > 0)
+		write(1, &buffer[0], *buff_int);
+
+	*buff_int = 0;
 }
