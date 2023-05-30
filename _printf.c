@@ -4,13 +4,9 @@ void _buffer(char buffer[], int *buff_int);
 
 /**
  * _printf-print as the printf lib
- *
  * @format:first string
- *
- * Return:arguments
- *
+ * Return:arguments.
  */
-
 int _printf(const char *format, ...)
 {
 	int i, p_char = 0, str = 0;
@@ -57,13 +53,9 @@ int _printf(const char *format, ...)
 
 /**
  * _buffer-Prints the char in a buffer
- *
  * @buffer:array of char
- *
  * @buff_int:len of a buffer
- *
  */
-
 void _buffer(char buffer[], int *buff_int)
 {
 	if (*buff_int > 0)
