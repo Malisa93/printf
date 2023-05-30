@@ -11,9 +11,9 @@ void _buffer(char buffer[], int *buff_int);
  *
  */
 
-int main()
+int main(void)
 {
-	return (0);
+	return 0;
 }
 
 int _printf(const char *format, ...)
