@@ -11,6 +11,11 @@ void _buffer(char buffer[], int *buff_int);
  *
  */
 
+int main()
+{
+	return (0);
+}
+
 int _printf(const char *format, ...)
 {
 	int i, p_char = 0, str = 0;
